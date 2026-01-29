@@ -1,0 +1,71 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html,body{
+    height: 100%;
+    width: 100%;
+}
+body{
+    padding: 5vw;
+    background-color: black;
+}
+button{
+    padding: 10px 20px;
+    border: 2px solid white;
+}
+/* this is first button */
+#btn1{
+    padding: 10px 20px;
+    background-color: transparent;
+    border: 2px solid cyan;
+    font-weight: 600;
+    color: white;
+    position: relative;
+}
+#btn1::after{
+    content:"";
+    height: 100%;
+    background-color: cyan;
+    width: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: all linear 0.5s;
+    z-index: -1;
+}
+#btn1:hover::after{
+    width: 100%;
+}
+#btn1:hover{
+    color: black;
+}
+/* this is second button */
+#btn2{
+    /* transition: all linear 0.5s; */
+    background-color: transparent;
+    color: cyan;
+    font-weight: 600;
+    position: relative;
+    overflow: hidden;
+}
+#btn2::after{
+    content: "";
+    background-color:cyan;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%) scale(0);
+    transition: all linear 0.3s;
+    position: absolute;
+    z-index: -1;
+}
+#btn2:hover::after{
+    transform: translate(-50%,-50%)scale(2.4);
+}
+#btn2:hover{
+    color: black;
+}
